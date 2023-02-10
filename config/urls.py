@@ -9,8 +9,10 @@ urlpatterns = [
     path('projects/', include('projects.urls')),
     path('technologies/', include('technologies.urls')),
     path('contact/', include('contact.urls')),
+    path('upload/', include('upload.urls')),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    

@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'projects',
     'technologies',
     'contact',
+    'upload',
 ]
 
 MIDDLEWARE = [
@@ -164,7 +165,21 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'build/static')
 ]
 
-STATIC_URL = '/static/'
+
+from google.oauth2 import service_account
+# storage
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.path.join(BASE_DIR, 'pure-vehicle-376415-57176dd7c4dd.json')
+)
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+GS_BUCKET_NAME = 'django-upload-bucket-heidless'
+
+STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+
+#STATIC_URL = '/static/'
+
+STATIC_URL = 'https://storage.cloud.google.com/django-upload-bucket-heidless/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
