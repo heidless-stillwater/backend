@@ -29,7 +29,7 @@ DEBUG=env('DEBUG')
 
 #DEBUG = False
 
-ALLOWED_HOSTS = ['34.105.139.229','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['35.197.215.67','34.105.139.229','localhost','127.0.0.1']
 
 #ALLOWED_HOSTS = [
 #    '0.0.0.0',
