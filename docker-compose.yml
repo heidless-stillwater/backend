@@ -3,7 +3,6 @@ services:
     image: postgres
     network_mode: bridge
     user: postgres
-
     volumes:
       - ./data/db:/var/lib/postgresql/data
     ports:
